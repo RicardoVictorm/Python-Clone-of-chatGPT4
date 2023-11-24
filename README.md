@@ -1,11 +1,11 @@
 # Python-Clone-of-chatGPT4
-A Python application of chatGPT
+*A Python application of chatGPT*
 
 --------------------------
 
 # Chat Application Development with OpenAI and Flet
 
-In this app, I just explore the development of a chat application featuring multiple nodes and an answering bot, utilizing OpenAI's text-deviance-003 [Chatted API](https://openai.com/api/) model engine, and implementing using the Flet library in Python.
+In this app, I just explore the development of a chat application featuring multiple nodes and an answering bot, utilizing OpenAI's [text-davinci-003] (https://www.geeksforgeeks.org/open-ai-gpt-3/) model engine, and implementing using the Flet library in Python.
 
 ## What is Flet?
 
