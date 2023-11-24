@@ -105,4 +105,74 @@ def main(page: ft.Page):
             response = response[1:] 
         return response 
 
-   
+    
+   # Function to handle incoming messages and update the chat interface.
+    def on_message(message: Message): 
+        if message.message_type == "chat_message": 
+            m = ChatMessage(message) 
+        elif message.message_type == "login_message": 
+            m = ft.Text(message.text, italic=True, 
+                        color=ft.colors.BLACK45, size=12) 
+        chat.controls.append(m) 
+        page.update() 
+
+    page.pubsub.subscribe(on_message)  # Subscribing to message events.
+
+    # Setting up the dialog for user name entry.
+    join_user_name = ft.TextField( 
+        label="Enter your name to join the chat", 
+        autofocus=True, 
+        on_submit=join_chat_click, 
+    ) 
+    page.dialog = ft.AlertDialog( 
+        open=True, 
+        modal=True, 
+        title=ft.Text("Welcome!"), 
+        content=ft.Column([join_user_name], width=300, height=70, tight=True), 
+        actions=[ft.ElevatedButton(text="Join chat", on_click=join_chat_click)], 
+        actions_alignment="end", 
+    ) 
+
+    # Creating the chat message list view.
+    chat = ft.ListView( 
+        expand=True, 
+        spacing=10, 
+        auto_scroll=True, 
+    ) 
+
+    # Setting up the new message entry field.
+    new_message = ft.TextField( 
+        hint_text="Write a message...", 
+        autofocus=True, 
+        shift_enter=True, 
+        min_lines=1, 
+        max_lines=5, 
+        filled=True, 
+        expand=True, 
+        on_submit=send_message_click, 
+    ) 
+
+    # Adding all components to the main page.
+    page.add( 
+        ft.Container( 
+            content=chat, 
+            border=ft.border.all(1, ft.colors.OUTLINE), 
+            border_radius=5, 
+            padding=10, 
+            expand=True, 
+        ), 
+        ft.Row( 
+            [ 
+                new_message, 
+                ft.IconButton( 
+                    icon=ft.icons.SEND_ROUNDED, 
+                    tooltip="Send message", 
+                    on_click=send_message_click, 
+                ), 
+            ] 
+        ), 
+    ) 
+
+# Running the Flet application as a web or desktop application.
+ft.app(target=main, port=9000, view=ft.WEB_BROWSER)  # For web application.
+ft.app(target=main)  # For desktop application.
