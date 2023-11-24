@@ -1,7 +1,7 @@
 # Python-Clone-of-chatGPT4
 *A Python application of chatGPT*
 
---------------------------
+-------------------
 
 # Chat Application Development with OpenAI and Flet
 
@@ -17,7 +17,7 @@ Flet is a Python library that enables developers to build real-time applications
 - **Architecture**: Flet enables you to write a monolithic, stateful application in Python, resulting in a multi-user, real-time Single-Page Application.
 - **Cross-Platform Delivery**: A Flet application can be deployed as a web app accessible via browsers, or installed on Windows, macOS, Linux, and mobile devices.
 
--------------------------------------------
+---------------------
 
 ## Installation
 Install the required modules using pip:
@@ -26,6 +26,13 @@ pip install flet
 pip install openai
 ````
 ---------------------
+
+## Run
+```bash
+app_gpt.py
+````
+
+--------------------
 
 The chat application uses the flet library to create a graphical user interface, including text fields, buttons, and icons. The ft.app function starts a web server and renders the chat application in a web browser.
 
