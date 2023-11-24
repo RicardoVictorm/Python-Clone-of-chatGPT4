@@ -5,7 +5,7 @@
 
 # Chat Application Development with OpenAI and Flet
 
-In this app, I just explore the development of a chat application featuring multiple nodes and an answering bot, utilizing OpenAI's [text-davinci-003](https://www.geeksforgeeks.org/open-ai-gpt-3/) model engine, and implementing using the Flet library in Python.
+In this app, I just explore the development of a chat application featuring multiple nodes and an answering bot, utilizing OpenAI's _text-davinci-003_ model engine, and implementing using the Flet library in Python.
 
 ## What is Flet?
 
